@@ -1,0 +1,1 @@
+En este directorio van los Data Access Objects, que son las clases que acceden a la base de datos.

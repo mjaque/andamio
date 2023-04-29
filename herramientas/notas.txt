@@ -1,0 +1,9 @@
+En este documento se describe como instalar, configurar y utilizar las herramientas auxiliares de desarrollo:
+	- IDE (Visual Studio, vim, etc.)
+	- Compiladores (Typescript, Angular...)
+	- Analizadores (ESlint...)
+	- Testing (Mocha, Selenium...)
+	- Instalación de Librerías (Composer, Node.js...)
+	- Herramientas de Documentación (JSDoc, phpDoc...)
+	- Entornos de Prueba (Docker, Máquinas Virtuales...)
+	- Etc.

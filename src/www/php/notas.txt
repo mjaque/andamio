@@ -1,0 +1,2 @@
+En este directorio van los ficheros "tradicionales" de PHP.
+Este directorio require el fichero .htaccess (oculto) para garantizar las redirecciones al api.

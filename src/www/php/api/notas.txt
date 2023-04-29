@@ -1,0 +1,2 @@
+En este directorio van los ficheros de php del API REST de la aplicación.
+También el router principal (index.php)
