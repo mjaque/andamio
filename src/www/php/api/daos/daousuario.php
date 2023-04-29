@@ -20,7 +20,8 @@ class DAOUsuario{
 		$sql  = 'SELECT ...';
 
 		$params = array('usuario' => $login->usuario, 'clave' => $login->clave);
-return $usuario;
+		
+		/*
 		$resultado = BD::seleccionar($sql, $params);
 		if (count($resultado) == 1){
 			//Asignamos los datos del usuario a $usuario
@@ -32,6 +33,10 @@ return $usuario;
 		}
 		else
 			$usuario = false;
+		*/
+		//Simulación
+		$usuario->id = 42;
+		$usuario->email = 'prueba@prueba.com';
 
 		return $usuario;
 	}

@@ -12,7 +12,6 @@ import { Vista2 } from './vistas/vista2.js'
 
 // Cargamos los Servicios
 import { Rest } from './servicios/rest.js'
-import { SessionStorage } from './servicios/sessionstorage.js'
 
 /**
   Controlador principal de la aplicación.
@@ -31,9 +30,10 @@ class App {
   **/
   iniciar () {
     //Comprobar login
-    this.#usuario = SessionStorage.getUsuario()
-    //if (!this.#usuario)
-    //  window.location.href = 'login.html'
+    this.#usuario = sessionStorage.getItem('usuario')
+    //console.log(this.#usuario)
+    if (!this.#usuario)
+      window.location.href = 'login.html' //Falta informar al usuario del error.
     this.modelo = new Modelo()
     this.vistaMenu = new VistaMenu(this, document.getElementById('divMenu'))
     this.vista1 = new Vista1(this, document.getElementById('divVista1'))

@@ -5,7 +5,6 @@
 
 // Cargamos los Servicios
 import { Rest } from './servicios/rest.js'
-import { SessionStorage } from './servicios/sessionstorage.js'
 
 /**
   Controlador de Login.
@@ -43,8 +42,9 @@ iniciar () {
     Rest.post('login', [], login, true)
         //Recibimos del servidor el token de autenticación (o un error si falla la autenticación)
       .then(usuario => {
+        //console.log(usuario)
         //Guardamos el token en SessionStorage
-        //...
+        sessionStorage.setItem('usuario', usuario)
         //Vamos a la página principal
         window.location.href = 'index.html'
       })
