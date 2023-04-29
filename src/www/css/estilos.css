@@ -1,2 +1,43 @@
 /* Reglas de css */
 
+/* Reglas de Vista Menú */
+#divMenu{
+    background-color: blue;
+    border-bottom: 1px solid grey;
+    padding: 1rem;
+}
+#divMenu h1{
+    color: white;
+    font-weight: 400;
+}
+#divMenu a{
+    cursor: pointer;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+#divMenu a:hover{
+    text-decoration: underline;
+}
+
+/* Reglas de Vista 1 */
+#divVista1{
+    background-color: aqua;
+    min-height: 300px;
+    padding: 1rem;
+}
+#divVista1 h1{
+    color: white;
+    font-weight: 400;
+}
+
+/* Reglas de Vista 2 */
+#divVista2{
+    background-color: darkgoldenrod;
+    min-height: 300px;
+    padding: 1rem;
+}
+#divVista2 h1{
+    color: green;
+    font-weight: 400;
+}

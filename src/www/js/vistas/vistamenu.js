@@ -26,10 +26,9 @@ export class VistaMenu extends Vista {
     this.limpiar()
     const h1 = document.createElement('h1')
     this.base.appendChild(h1)
-    h1.appendChild(document.createTextNode('Vista 1'))
-    console.log('TRON2')
-    this.crearEnlaceAVista2()
-    //this.base.appendChild(this.crearEnlaceAVista2())
+    h1.appendChild(document.createTextNode('Estás en Vista 1'))
+    //this.crearEnlaceAVista2()
+    this.base.appendChild(this.crearEnlaceAVista2())
   }
 
   /**
@@ -39,7 +38,7 @@ export class VistaMenu extends Vista {
     this.limpiar()
     const h1 = document.createElement('h1')
     this.base.appendChild(h1)
-    h1.appendChild(document.createTextNode('Vista 2'))
+    h1.appendChild(document.createTextNode('Estás en Vista 2'))
     this.base.appendChild(this.crearEnlaceAVista1())
   }
   
@@ -61,7 +60,6 @@ export class VistaMenu extends Vista {
     const a = document.createElement('a')
     a.appendChild(document.createTextNode('Ver Vista2'))
     a.onclick = this.controlador.verVista2.bind(this.controlador)
-    console.log(a)
     return a
   }
 
