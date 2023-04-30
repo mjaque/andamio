@@ -12,9 +12,9 @@ class Login{
 	//Se configura por inyección de dependencias
 	public static $clave = null;
 	public static $algoritmo_encriptacion = null;
-	public static $iv = 'PantUfl45--;jeu$';
+	public static $iv = '16bits aleatorio';
 	//Id de cliente de Google.
-	private static $ID_CLIENTE = '756573648994-cn4uk8gsic003hnotjb9mpt1mjtnqvgm.apps.googleusercontent.com';
+	private static $ID_CLIENTE = 'id del cliente de Google';
 
 	/**
 		Autentifica al usuario con el email y la clave.
@@ -25,23 +25,16 @@ class Login{
 	**/
 	function post($pathParams, $queryParams, $token){
 		global $config;
-		if ($config['test'] && strpos($token, 'fundacionloyola')) {
-			$payload = [];
-			$payload['email'] = $token;
-			$payload['given_name'] = '-';
-			$payload['family_name'] = '-';
+		$client = new Google_Client(['client_id' => self::$ID_CLIENTE]);
+		$payload = $client->verifyIdToken($token);
+		if (!$payload) {
+			// Invalid ID token
+			header('HTTP/1.1 401 Unauthorized');
+			die();
 		}
-		else{
-			$client = new Google_Client(['client_id' => self::$ID_CLIENTE]);
-			$payload = $client->verifyIdToken($token);
-			if (!$payload) {
-				// Invalid ID token
-				header('HTTP/1.1 401 Unauthorized');
-				die();
-			}
-			//El usuario ha sido identificado por Google
-		}
-		$usuario = DAOUsuario::autenticar($payload['email']);
+		//El usuario ha sido identificado por Google
+		
+		$usuario = DAOUsuario::autenticarEmail($payload['email']);
 		sleep(1);
 		if (!$usuario){
       		header('HTTP/1.1 401 Unauthorized');
@@ -56,13 +49,5 @@ class Login{
     	header('HTTP/1.1 200 OK');
     	echo json_encode($usuario);
     	die();
-	}
-	/**
-		Desencripta un mensaje.
-		@param {String} $mensaje El texto del mensaje a desencriptar.
-		@return {String} Texto del mensaje desencriptado o false si no se pudo desencriptar.
-	**/
-	public static function desencriptar($mensaje) {
-			return openssl_decrypt($mensaje, self::$algoritmo_encriptacion, self::$clave, 0, self::$iv);
 	}
 }
