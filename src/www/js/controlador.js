@@ -102,6 +102,10 @@ class App {
     this.vista2.mostrar(false)
   }
 
+  accion1(objeto){
+	//Acción 1
+  }
+
 }
 
 /* eslint-disable no-new */

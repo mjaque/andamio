@@ -17,7 +17,16 @@
 		<p>Vista de Menú</p>
 	</div>
 	<div id=divVista1>
-		<p>Contenido de vista1</p>
+		<h1>Título de Vista1</h1>
+		<!-- No usamos ids para evitar la colisión de nombres con otras vistas. Usamos referencias relativas -->
+		<fieldset>
+			<legend>Acción 1</legend>
+			<p><label>Campo 1:<input required></label></p>
+    	  	<p class=error >Ha fallado la validación del campo 1</p>
+      		<p><label>Campo 2:<input required></p>
+  	    	<p class=error >Ha fallado la validación del campo 2</p>
+    	  	<button>Enviar</button>
+		</fieldset>
 	</div>
 	<div id=divVista2>
 		<p>Contenido de vista2</p>
