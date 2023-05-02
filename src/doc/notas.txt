@@ -1,4 +1,0 @@
-En este documento se incluyen las páginas del:
-	- Manual del Programador.
-	- Manual del Usuario.
-	- Manual de Instalación.

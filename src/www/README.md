@@ -1,5 +1,6 @@
+# Directorio /src/www #
 En este directorio van los archivos que se publicarán en el servidor web de explotación.
 También las páginas estáticas:
-	- index.html
-	- login.html
-	- Páginas Legales, etc.
+- index.html
+- login.html
+- Páginas Legales, etc.
