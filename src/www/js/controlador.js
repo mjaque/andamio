@@ -4,6 +4,7 @@
 
 // Cargamos los Modelos
 import { Modelo } from './modelos/modelo.js'
+import { Clase1 } from './modelos/clase1.js'
 
 // Cargamos las Vistas
 import { VistaMenu } from './vistas/vistamenu.js'
@@ -103,7 +104,16 @@ class App {
   }
 
   accion1(objeto){
-	//Acción 1
+    //Acción 1
+    Rest.post('accion1', [], objeto)
+      .then(respuesta => {
+	//Procesamos la respuesta del servidor
+	//Actualizamos el modelo
+	//Cambiamos de vista...
+      })
+      .catch(error => {
+	//Gestionamos el error
+      })
   }
 
 }
