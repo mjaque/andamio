@@ -1,0 +1,8 @@
+Ficheros de multimedia:
+	- Imágenes
+	- Vídeos
+	- Audio
+	- Ficheros de descarga
+	- Pdfs
+	- etc.
+	
