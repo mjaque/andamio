@@ -1,4 +1,4 @@
-# Fichero de configuración para vim (~/.vimrc)
+" Fichero de configuración para vim (~/.vimrc)
 set number
 set tabstop=2 
 set shiftwidth=2
