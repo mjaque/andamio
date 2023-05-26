@@ -1,0 +1,11 @@
+" Fichero de configuración para vim (~/.vimrc)
+set number
+set tabstop=2 
+set shiftwidth=2
+set autoindent
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript,typescript,json,php setlocal foldmethod=marker
+autocmd FileType php,javascript,typescript,json,php setlocal foldmarker={,}
