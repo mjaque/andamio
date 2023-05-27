@@ -1,0 +1,13 @@
+Mocha es una herramienta de tests automáticos
+Ref: mochajs.org
+
+Requiere: node.js
+
+Instalación: Desde el directorio del proyecto
+	npm install --save-dev mocha
+
+Los tests se almacenan en /src/tests/mocha
+
+Ejecución: Desde el directorio del proyecto
+	./node_modules/mocha/bin/mocha.js src/tests/mocha/
+
