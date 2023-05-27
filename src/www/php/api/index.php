@@ -2,7 +2,9 @@
 	/**
 		Router del API REST de la aplicación.
 		Su responsabilidad es procesar la petición HTTP para decidir a qué controlador llamar (routing).
-		También identifica al usuario (autenticación).
+		También ejecuta los middleware:
+			- Autenticación: identifica al usuario (autenticación).
+			- Loggin: registra la operación solicitada
 		Es un interfaz RESTful (https://www.rfc-editor.org/rfc/rfc7231)
 	**/
 	//echo 'PHP version: ' . phpversion();die();
@@ -50,7 +52,7 @@
 				$pathParams[$i] = null;
 		$body = json_decode(file_get_contents('php://input'));
 
-		//Autenticación
+		//Middleware de Autenticación
 		$usuario = null;
 		require_once('./controladores/login.php');
 		//Inyección de dependencias
@@ -63,7 +65,7 @@
 				$usuario = json_decode(Login::desencriptar($autorizacion));
 		}
 
-		//Logging
+		//Middleware de Logging
 		if ($config['log']){
 			require_once('./servicios/log.php');
 			Log::registrar($usuario, $recurso, $metodo, $pathParams, $queryParams, $body);
@@ -80,9 +82,9 @@
 				require_once('./controladores/login_google.php');
 				$controlador = new LoginGoogle();
 				break;
-			case 'controlador1':
-				require_once('./controladores/controlador1.php');
-				$controlador = new Controlador1();
+			case 'entidad1':
+				require_once('./controladores/entidad1.php');
+				$controlador = new \Controladores\Entidad1();
 				break;
 			case 'controlador2':
 				require_once('./controladores/controlador2.php');

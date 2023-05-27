@@ -1,0 +1,8 @@
+eslint analiza el código Javascript para encontrar y corregir errores
+Ref: https://eslint.org/
+
+Instalación y configuración:
+	npm init @eslint/config
+
+Uso:
+	npx eslint --ext .js src/www/js

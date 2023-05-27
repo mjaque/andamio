@@ -13,7 +13,7 @@ export class VistaMenu extends Vista {
   constructor (controlador, base) {
     super(controlador, 'flex')
     this.base = base
-    
+
     // Cogemos referencias a los elementos del interfaz
 
     // Asociamos eventos
@@ -27,7 +27,7 @@ export class VistaMenu extends Vista {
     const h1 = document.createElement('h1')
     this.base.appendChild(h1)
     h1.appendChild(document.createTextNode('Estás en Vista 1'))
-    //this.crearEnlaceAVista2()
+    // this.crearEnlaceAVista2()
     this.base.appendChild(this.crearEnlaceAVista2())
   }
 
@@ -41,11 +41,11 @@ export class VistaMenu extends Vista {
     h1.appendChild(document.createTextNode('Estás en Vista 2'))
     this.base.appendChild(this.crearEnlaceAVista1())
   }
-  
+
   /**
-   * 
+   *
    */
-  crearEnlaceAVista1(){
+  crearEnlaceAVista1 () {
     const a = document.createElement('a')
     a.appendChild(document.createTextNode('Ver Vista1'))
     a.onclick = this.controlador.verVista1.bind(this.controlador)
@@ -53,10 +53,10 @@ export class VistaMenu extends Vista {
   }
 
   /**
-   * 
-   * 
+   *
+   *
    */
-  crearEnlaceAVista2(){
+  crearEnlaceAVista2 () {
     const a = document.createElement('a')
     a.appendChild(document.createTextNode('Ver Vista2'))
     a.onclick = this.controlador.verVista2.bind(this.controlador)

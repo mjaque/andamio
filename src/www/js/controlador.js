@@ -30,16 +30,15 @@ class App {
     Se llama al cargar la página.
   **/
   iniciar () {
-    //Comprobar login
+    // Comprobar login
     this.#usuario = sessionStorage.getItem('usuario')
-    //console.log(this.#usuario)
-    if (!this.#usuario)
-      window.location.href = 'login.html' //Falta informar al usuario del error.
+    // console.log(this.#usuario)
+    if (!this.#usuario) { window.location.href = 'login.html' } // Falta informar al usuario del error.
     this.modelo = new Modelo()
     this.vistaMenu = new VistaMenu(this, document.getElementById('divMenu'))
     this.vista1 = new Vista1(this, document.getElementById('divVista1'))
     this.vista2 = new Vista2(this, document.getElementById('divVista2'))
-   
+
     this.verVista1()
   }
 
@@ -84,17 +83,19 @@ class App {
     Rest.setAutorizacion(null)
     window.location.href = 'login.html'
   }
- 
-  verVista1(){
+
+  verVista1 () {
     this.vistaMenu.verVista1()
     this.ocultarVistas()
     this.vista1.mostrar()
   }
-  verVista2(){
+
+  verVista2 () {
     this.vistaMenu.verVista2()
     this.ocultarVistas()
     this.vista2.mostrar()
   }
+
   /**
     Oculta todas las vistas.
   **/
@@ -103,19 +104,18 @@ class App {
     this.vista2.mostrar(false)
   }
 
-  accion1(objeto){
-    //Acción 1
-    Rest.post('accion1', [], objeto)
+  accion1 (objeto) {
+    // Acción 1
+    Rest.post('entidad1', [], objeto)
       .then(respuesta => {
-	//Procesamos la respuesta del servidor
-	//Actualizamos el modelo
-	//Cambiamos de vista...
+        // Procesamos la respuesta del servidor
+        // Actualizamos el modelo
+        // Cambiamos de vista...
       })
       .catch(error => {
-	//Gestionamos el error
+        // Gestionamos el error
       })
   }
-
 }
 
 /* eslint-disable no-new */

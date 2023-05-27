@@ -6,7 +6,7 @@ export class Vista {
   /*
     Constructor de la clase.
     @param {Object} controlador Controlador de la vista.
-    @param {String} display Valor por defecto de style.display para la vista 
+    @param {String} display Valor por defecto de style.display para la vista
   **/
   constructor (controlador, display = 'block') {
     this.controlador = controlador

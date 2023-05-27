@@ -3,9 +3,14 @@ set number
 set tabstop=2 
 set shiftwidth=2
 set autoindent
+set belloff=all
+
+" Autocompletar con CTRL+N
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Opciones de doblado de código
 autocmd FileType javascript,typescript,json,php setlocal foldmethod=marker
 autocmd FileType php,javascript,typescript,json,php setlocal foldmarker={,}

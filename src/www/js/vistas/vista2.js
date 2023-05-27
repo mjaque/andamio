@@ -4,7 +4,7 @@
 
 import { Vista } from './vista.js'
 
-export class Vista2 extends Vista{
+export class Vista2 extends Vista {
   /**
     Constructor de la clase.
     @param {Object} controlador Controlador de la vista.
@@ -13,13 +13,11 @@ export class Vista2 extends Vista{
   constructor (controlador, base) {
     super(controlador)
     this.base = base
-   
+
     // Cogemos referencias a los elementos del interfaz
-    //this.iNombre = document...
+    // this.iNombre = document...
 
     // Asociamos eventos
-    //this.btnAceptar.onclick = this.aceptar.bind(this)
+    // this.btnAceptar.onclick = this.aceptar.bind(this)
   }
-
 }
-
