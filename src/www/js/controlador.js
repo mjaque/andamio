@@ -31,7 +31,7 @@ class App {
   **/
   iniciar () {
     // Comprobar login
-    this.#usuario = sessionStorage.getItem('usuario')
+    this.#usuario = JSON.parse(sessionStorage.getItem('usuario'))
     // console.log(this.#usuario)
     if (!this.#usuario) { window.location.href = 'login.html' } // Falta informar al usuario del error.
     this.modelo = new Modelo()
