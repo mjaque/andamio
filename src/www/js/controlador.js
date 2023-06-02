@@ -34,6 +34,8 @@ class App {
     this.#usuario = JSON.parse(sessionStorage.getItem('usuario'))
     // console.log(this.#usuario)
     if (!this.#usuario) { window.location.href = 'login.html' } // Falta informar al usuario del error.
+    //Establecemos la autorización para las llamadas REST
+    Rest.setAutorizacion(this.#usuario.autorizacion)
     this.modelo = new Modelo()
     this.vistaMenu = new VistaMenu(this, document.getElementById('divMenu'))
     this.vista1 = new Vista1(this, document.getElementById('divVista1'))
